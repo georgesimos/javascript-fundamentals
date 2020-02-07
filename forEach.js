@@ -29,17 +29,16 @@ _.each = function(list, callback) {
   if (Array.isArray(list)) {
     // Loop through array
     for (let i = 0; i < list.length; i++) {
-      // Calling the callbback with a list item
-      callback(list[i], i, list); // item, index, self
+      // Calling the callbback with a list element
+      callback(list[i], i, list); // element, index, self
     }
   } else {
     // object
     // Loop through object
     for (let key in list) {
       console.log(list[key]);
-      callback(list[key], key, list); // item, key, self
+      callback(list[key], key, list); // value, key, self
     }
-    // call the callbback with a list item
   }
 };
 _.each(suspects, logger);
@@ -54,6 +53,6 @@ _.each(["george", "nancy", "marios"], function(name, i, list) {
 });
 
 console.log("--------------");
-_.each({ simos: "test", salam: "test2" }, function(item, key, list) {
-  console.log(item, key, list);
+_.each({ simos: "test", salam: "test2" }, function(value, key, list) {
+  console.log(value, key, list);
 });
