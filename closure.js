@@ -117,3 +117,23 @@ const findSomeone = () => {
 };
 const someoneSpeak = findSomeone();
 someoneSpeak();
+
+const makeTimer = () => {
+  let elapsed = 0;
+
+  const stopwatch = () => {
+    return elapsed;
+  };
+
+  const increase = () => elapsed++;
+
+  setInterval(increase, 1000);
+
+  return stopwatch;
+};
+
+let timer = makeTimer();
+const getTimer = () => console.log(timer());
+setTimeout(getTimer, 5000);
+
+console.log("wtf");
