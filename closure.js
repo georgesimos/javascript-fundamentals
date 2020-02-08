@@ -88,3 +88,20 @@ function checkScope() {
   // return that function from inside the parent function
   return innerFunc;
 }
+
+// Execution part
+var scope = "global scope";
+function checkScope() {
+  var innerVar = "local scope";
+  function innerFunc() {
+    return innerVar;
+  }
+  return innerFunc;
+}
+// run parents function and save to a variabble.
+// this variable will hold whatever that function RETURNS
+var test = checkScope();
+// optional: check what that variables hold as its value. (hint. it should be the the inner function )
+console.log(test);
+// run the inner function
+test();
