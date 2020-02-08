@@ -72,3 +72,19 @@ console.log(counter.count());
 console.log(counter.count());
 console.log(counter.count());
 console.log(counter.reset());
+
+// Closure Recipe
+// Closure happens when you put a function inside in another function
+// and you getting advantage of returning a function which still have access to his parents props even if it have been executed
+
+// Create your parent function
+function checkScope() {
+  // define some variabbles in the parent's local scope
+  var innerVar = "local scope";
+  // define function inside the parent function. We call this a child
+  function innerFunc() {
+    return innerVar;
+  }
+  // return that function from inside the parent function
+  return innerFunc;
+}
