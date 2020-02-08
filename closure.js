@@ -27,17 +27,48 @@
 // funcAlert();
 // funcAlert2(); // new context
 
-const newClue = name => {
-  const length = name.length;
+// const newClue = name => {
+//   const length = name.length;
 
-  return weapon => {
-    let clue = length + weapon.length;
-    return !!(clue % 2);
+//   return weapon => {
+//     let clue = length + weapon.length;
+//     return !!(clue % 2);
+//   };
+// };
+
+// const didGreenDoItWith = newClue("Green");
+// console.log(didGreenDoItWith("knife"));
+// console.log(didGreenDoItWith("gun"));
+// console.log(didGreenDoItWith("tv"));
+// console.log("Wow he did it with a tv ...");
+
+// function countClues() {
+//   var n = 0;
+//   return {
+//     count: function() {
+//       return ++n;
+//     },
+//     reset: function() {
+//       return (n = 0);
+//     }
+//   };
+// }
+
+//ES6 equivalent
+
+const countClues = () => {
+  let n = 0;
+
+  return {
+    count: () => n++,
+    reset: () => (n = 0)
   };
 };
 
-const didGreenDoItWith = newClue("Green");
-console.log(didGreenDoItWith("knife"));
-console.log(didGreenDoItWith("gun"));
-console.log(didGreenDoItWith("tv"));
-console.log("Wow he did it with a tv ...");
+const counter = countClues();
+console.log(counter.count());
+console.log(counter.count());
+console.log(counter.count());
+console.log(counter.count());
+console.log(counter.count());
+console.log(counter.reset());
