@@ -15,3 +15,10 @@ const constructArr = function() {
 
 const newArray = constructArr("was", "it", "in");
 console.log(newArray);
+
+const _ = {};
+
+_.from = array => Array.prototype.slice.call(array);
+// _.from = (...array) => array;
+// console.log(_.from("was", "it", "in"));
+console.log(_.from("abcdefg"));
