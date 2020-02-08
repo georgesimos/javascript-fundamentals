@@ -105,3 +105,15 @@ var test = checkScope();
 console.log(test);
 // run the inner function
 test();
+
+const findSomeone = () => {
+  const speak = () => {
+    console.log(who);
+  };
+
+  let who = "Why hello there, Prof Plum!";
+
+  return speak;
+};
+const someoneSpeak = findSomeone();
+someoneSpeak();
