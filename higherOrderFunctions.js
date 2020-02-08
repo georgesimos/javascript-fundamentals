@@ -13,15 +13,10 @@ const result = ifElse(
 console.log(result());
 
 // Passing Arguments
-var increments = function(n) {
-  return n + 1;
-};
+const increments = n => n + 1;
 
-var square = function(n) {
-  return n * n;
-};
+const square = n => n * n;
 
-var doMathSoIDontHaveTo = function(n, func) {
-  return func(n);
-};
+const doMathSoIDontHaveTo = (n, func) => func(n);
+
 console.log(doMathSoIDontHaveTo(5, square), doMathSoIDontHaveTo(4, increments));
