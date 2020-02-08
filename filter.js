@@ -122,8 +122,8 @@ _.filter = function(arr, cb) {
   return storage;
   // return array
 };
-function isPresent(item) {
-  return item.present;
+function isPresent(suspectObject) {
+  return suspectObject.present;
 }
 const isPresentArray = _.filter(videoData, isPresent);
 console.log(isPresentArray);
