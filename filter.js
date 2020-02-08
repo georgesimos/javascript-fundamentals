@@ -75,21 +75,53 @@ const videoData = [
 
 const _ = {};
 
+// _.filter = function(arr, cb) {
+//   // Create a new array
+//   const storage = [];
+//   // Loop through array
+//   for (let i = 0; i < arr.length; i++) {
+//     // check if cb returns true
+//     if (cb(arr[i], i, arr) === true) {
+//       // if returns true, push into array
+//       storage.push(arr[i]);
+//     }
+//   }
+//   return storage;
+//   // return array
+// };
+
+_.each = function(list, callback) {
+  if (Array.isArray(list)) {
+    // Loop through array
+    for (let i = 0; i < list.length; i++) {
+      // Calling the callbback with a list element
+      callback(list[i], i, list); // element, index, self
+    }
+  } else {
+    // object
+    // Loop through object
+    for (let key in list) {
+      console.log(list[key]);
+      callback(list[key], key, list); // value, key, self
+    }
+  }
+};
+
 _.filter = function(arr, cb) {
   // Create a new array
   const storage = [];
   // Loop through array
-  for (let i = 0; i < arr.length; i++) {
+  _.each(arr, function(value, index, self) {
     // check if cb returns true
-    if (cb(arr[i], i, arr) === true) {
+    if (cb(value, index, self) === true) {
       // if returns true, push into array
-      storage.push(arr[i]);
+      storage.push(value);
     }
-  }
+  });
+
   return storage;
   // return array
 };
-
 function isPresent(item) {
   return item.present;
 }
