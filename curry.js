@@ -5,7 +5,6 @@ const curry = fn => {
     };
   };
 };
-
 const abc = function(a, b) {
   return [a, b];
 };
